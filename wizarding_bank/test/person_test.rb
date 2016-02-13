@@ -30,8 +30,8 @@ class PersonTest < Minitest::Test
     assert_equal ({}), person.bank_accounts
   end
 
-  def test_person_creation_output_prints_string
+  def test_creating_a_person_returns_a_string
     string = "Josh has been created with 0 galleons in cash\n"
-    assert_output(string) {person = Person.new("Josh")}
+    assert_equal string, person = Person.new("Josh")
   end
 end
