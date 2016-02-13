@@ -146,7 +146,6 @@ class BankTest < Minitest::Test
   end
 
   def test_bank_can_transfer_money_to_another_bank_increasing_funds_at_second_bank
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     chase = Bank.new("JP Morgan Chase")
     person = Person.new("Josh", 1000)
@@ -158,7 +157,6 @@ class BankTest < Minitest::Test
   end
 
   def test_bank_transfer_decreases_money_at_bank_transfering_money
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     chase = Bank.new("JP Morgan Chase")
     person = Person.new("Josh", 1000)
@@ -170,7 +168,6 @@ class BankTest < Minitest::Test
   end
 
   def test_bank_transfer_increases_cash_in_bank_being_transferred_to
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     chase = Bank.new("JP Morgan Chase")
     person = Person.new("Josh", 1000)
@@ -182,7 +179,6 @@ class BankTest < Minitest::Test
   end
 
   def test_bank_transfer_decreases_cash_at_transferring_bank
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     chase = Bank.new("JP Morgan Chase")
     person = Person.new("Josh", 1000)
@@ -194,7 +190,6 @@ class BankTest < Minitest::Test
   end
 
   def test_bank_transfer_returns_a_string_when_successful
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     chase = Bank.new("JP Morgan Chase")
     person = Person.new("Josh", 1000)
@@ -206,7 +201,6 @@ class BankTest < Minitest::Test
   end
 
   def test_a_person_cannot_transfer_more_money_than_they_have_in_the_bank
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     chase = Bank.new("JP Morgan Chase")
     person = Person.new("Josh", 1000)
@@ -221,19 +215,17 @@ class BankTest < Minitest::Test
   end
 
   def test_unsuccesful_transfer_returns_a_string
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     chase = Bank.new("JP Morgan Chase")
     person = Person.new("Josh", 1000)
     wells_fargo.open_account(person)
     chase.open_account(person)
     wells_fargo.deposit(person, 750)
-    string = "Insufficient Funds"
+    string = "Insufficient funds."
     assert_equal string, wells_fargo.transfer(person, chase, 1000)
   end
 
   def test_person_cannot_transfer_money_to_a_bank_he_doesnt_have_an_account_with
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     chase = Bank.new("JP Morgan Chase")
     person = Person.new("Josh", 1000)
