@@ -91,7 +91,6 @@ class BankTest < Minitest::Test
   end
 
   def test_person_can_withdrawal_cash_from_a_bank_and_increase_their_current_cash
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     person = Person.new("Josh", 1000)
     wells_fargo.open_account(person)
@@ -101,7 +100,6 @@ class BankTest < Minitest::Test
   end
 
   def test_withdrawals_decrease_account_balance_by_withdrawal_amount
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     person = Person.new("Josh", 1000)
     wells_fargo.open_account(person)
@@ -111,7 +109,6 @@ class BankTest < Minitest::Test
   end
 
   def test_withdrawals_decrease_the_banks_current_cash
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     person = Person.new("Josh", 1000)
     wells_fargo.open_account(person)
@@ -121,18 +118,15 @@ class BankTest < Minitest::Test
   end
 
   def test_withdrawing_money_from_the_bank_returns_a_string
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     person = Person.new("Josh", 1000)
     wells_fargo.open_account(person)
     wells_fargo.deposit(person, 750)
-    wells_fargo.withdrawal(person, 250)
     string = "Josh has withdrawn 250 galleons. Balance: 500"
-    assert_equal string, wells_fargo.withdrawal(person, 750)
+    assert_equal string, wells_fargo.withdrawal(person, 250)
   end
 
   def test_person_cannot_withdrawal_more_than_they_have_in_the_bank
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     person = Person.new("Josh", 1000)
     wells_fargo.open_account(person)
@@ -144,7 +138,6 @@ class BankTest < Minitest::Test
   end
 
   def test_it_returns_a_string_when_someone_tries_to_overdraft
-    skip
     wells_fargo = Bank.new("Wells Fargo")
     person = Person.new("Josh", 1000)
     wells_fargo.open_account(person)
