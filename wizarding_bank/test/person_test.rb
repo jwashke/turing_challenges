@@ -27,7 +27,7 @@ class PersonTest < Minitest::Test
 
   def test_has_a_hash_of_bank_accounts_and_balances
     person = Person.new("Josh")
-    assert_equal ({}), person.bank_accounts
+    assert_equal ({}), person.accounts
   end
 
   def test_creating_a_person_returns_a_string
