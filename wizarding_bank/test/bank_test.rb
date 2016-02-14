@@ -1,6 +1,5 @@
 gem 'minitest'
 require 'minitest/autorun'
-require 'minitest/pride'
 require_relative '../lib/bank'
 require_relative '../lib/person'
 
@@ -21,23 +20,11 @@ class BankTest < Minitest::Test
     assert_equal 0, wells_fargo.current_cash
   end
 
-  def test_bank_outputs_a_string_when_created
-    string = "Wells Fargo has been created"
-    assert_equal, string, wells_fargo = Bank.new("Wells Fargo")
-  end
-
   def test_bank_can_create_an_account_on_a_person
     wells_fargo = Bank.new("Wells Fargo")
     person = Person.new("Josh", 1000)
     wells_fargo.open_account(person)
     assert_equal ({"Wells Fargo" => 0}), person.accounts
-  end
-
-  def test_bank_returns_a_string_when_an_account_is_opened
-    wells_fargo = Bank.new("Wells Fargo")
-    person = Person.new("Josh", 1000)
-    string = "An account has been opened for Josh with Wells Fargo."
-    assert_equal string, wells_fargo.open_account(person)
   end
 
   def test_person_should_be_able_to_deposit_money_at_their_bank_increasing_their_balance
